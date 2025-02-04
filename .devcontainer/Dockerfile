@@ -1,5 +1,5 @@
-ARG VARIANT=jammy
-FROM mcr.microsoft.com/vscode/devcontainers/python:3.11-${VARIANT}
+ARG VARIANT=bullseye
+FROM mcr.microsoft.com/vscode/devcontainers/python:3.10-${VARIANT}
 
 ENV POETRY_HOME="/opt/poetry" \
     POETRY_VIRTUALENVS_CREATE="false" \
