@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+function usage {
+	tailscale;
+	exit 0;
+}
+
+# If we're not root, the following commands will need sudo
+SUDOCMD="";
+[[ $(id -u) != "0" ]] && SUDOCMD="sudo ";
+
+function ensure_config {
+	ps -ef | grep '/usr/sbin/tailscaled' | grep -v grep &>/dev/null;
+	if [[ $? -ne 0 ]]
+	then
+		echo "Starting /usr/sbin/tailscaled...";
+		${SUDOCMD}/usr/sbin/tailscaled &>/dev/null &
+	fi
+}
+
+[[ $# -lt 1 ]] && usage;
+
+case $1 in
+	up )
+		ensure_config;
+		shift;
+		${SUDOCMD}tailscale up --accept-routes $@
+		;;
+	* )
+		${SUDOCMD}tailscale $@
+		;;
+esac
