@@ -1,5 +1,5 @@
 {
-	"name": "VSCode Debian Bullseye + OpenVPN3 + Tailscale + Docker",
+	"name": "VSCode Debian Bullseye + OpenVPN3 + Tailscale + Docker + AWS",
 	"build": {
 	  "dockerfile": "Dockerfile"
 	},
@@ -12,13 +12,6 @@
 	],
 	"remoteUser": "vscode",
 	"customizations": {
-	  "codespaces": {
-		"repositories": {
-		  "heistdotcom/*": {
-			"permissions": "write-all"
-		  }
-		}
-	  },
 	  "vscode": {
 		"extensions": [
 			"ms-python.python",
@@ -28,21 +21,16 @@
 	  }
 	},
 	"features": {
-		"ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {},
 		"ghcr.io/devcontainers/features/aws-cli:1": {},
-		"ghcr.io/devcontainers/features/docker-in-docker:2": {},
-		"ghcr.io/devcontainers/features/terraform:1": {},
-		"ghcr.io/devcontainers/features/node:1": {
-			"version": 16
-		}
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {}
 	},
 	"postCreateCommand": "sudo chown -fR vscode:vscode /home/vscode/.local /home/vscode/.aws /home/vscode/.config /home/vscode/.terraform.d /home/vscode/.kube",
 	"mounts": [
-		"source=heist-aws-credentials,target=/home/vscode/.aws,type=volume",
-		"source=heist-xdg-config,target=/home/vscode/.config,type=volume",
-		"source=heist-terraform-credentials,target=/home/vscode/.terraform.d,type=volume",
-		"source=heist-kube-config,target=/home/vscode/.kube,type=volume",
-		"source=heist-local-config,target=/home/vscode/.local,type=volume",
+		"source=vscode-aws-credentials,target=/home/vscode/.aws,type=volume",
+		"source=vscode-xdg-config,target=/home/vscode/.config,type=volume",
+		"source=vscode-terraform-credentials,target=/home/vscode/.terraform.d,type=volume",
+		"source=vscode-kube-config,target=/home/vscode/.kube,type=volume",
+		"source=vscode-local-config,target=/home/vscode/.local,type=volume",
 		"source=${localEnv:HOME}${localEnv:USERPROFILE},target=/shared,type=bind,consistency=cached"
 	]
 }

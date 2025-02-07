@@ -6,9 +6,9 @@ ENV POETRY_HOME="/opt/poetry" \
     POETRY_VIRTUALENVS_IN_PROJECT="true"
 
 COPY dockerfiles/ /
-RUN /create-apt-sources.sh
-RUN /install-apt-packages.sh
-RUN /install-poetry.sh && ${POETRY_HOME}/venv/bin/pip install poetry-dynamic-versioning==1.4.1
+RUN apt update && /create-apt-sources.sh
+RUN DEBIAN_FRONTEND=noninteractive /install-apt-packages.sh
+RUN /install-poetry.sh && ${POETRY_HOME}/venv/bin/pip install poetry-dynamic-versioning
 
 RUN mkdir -p /run/dbus && \
 usermod -s /bin/zsh vscode

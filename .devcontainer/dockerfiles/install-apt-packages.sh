@@ -6,7 +6,7 @@ apt update && \
 apt -y install \
 postgresql-14 \
 default-jdk \
-openvpn3=17~beta2+$(lsb_release -cs) \
+openvpn3 \
 tailscale \
 google-cloud-cli \
 gh \
