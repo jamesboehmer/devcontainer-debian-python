@@ -16,7 +16,11 @@
 		"extensions": [
 			"ms-python.python",
 			"ryanluker.vscode-coverage-gutters",
-			"SonarSource.sonarlint-vscode"
+			"hashicorp.terraform",
+			"tamasfe.even-better-toml",
+			"samuelcolvin.jinjahtml",
+			"zainchen.json",
+			"redhat.vscode-yaml"
 		]
 	  }
 	},

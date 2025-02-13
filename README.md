@@ -6,6 +6,12 @@
 - Devcontainer features:
   - docker-in-docker
   - aws-cli
+- VSCode extensions:
+  - hashicorp.terraform
+  - tamasfe.even-better-toml
+  - samuelcolvin.jinjahtml
+  - zainchen.json
+  - redhat.vscode-yaml
 - Poetry 2.0.1
 - Tailscale (`tscale`) and Openvpn (`ovpn`) clients
 - Google Cloud CLI
