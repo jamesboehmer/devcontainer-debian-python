@@ -6,7 +6,7 @@ ENV POETRY_HOME="/opt/poetry" \
     POETRY_VIRTUALENVS_IN_PROJECT="true"
 
 COPY dockerfiles/ /
-RUN apt update && /create-apt-sources.sh
+RUN apt-get update && /create-apt-sources.sh
 RUN DEBIAN_FRONTEND=noninteractive /install-apt-packages.sh
 RUN /install-poetry.sh && ${POETRY_HOME}/venv/bin/pip install poetry-dynamic-versioning
 

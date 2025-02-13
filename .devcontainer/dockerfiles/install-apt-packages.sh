@@ -2,8 +2,8 @@
 
 export DEBIAN_FRONTEND=noninteractive
 
-apt update && \
-apt -y install \
+apt-get update && \
+apt-get -y install \
 postgresql-14 \
 default-jdk \
 openvpn3 \

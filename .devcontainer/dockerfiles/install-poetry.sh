@@ -1,6 +1,6 @@
 #!/bin/bash
 
-apt -y install curl git;
+apt-get -y install curl git;
 
 export POETRY_HOME="/opt/poetry";
 export POETRY_VERSION="2.0.1";
