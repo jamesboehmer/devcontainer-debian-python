@@ -1,6 +1,6 @@
 # Debian Python Devcontainer
 
-- Base image `mcr.microsoft.com/vscode/devcontainers/python:3.10-bullseye`
+- Base image `mcr.microsoft.com/vscode/devcontainers/python:3.12-bullseye`
 - User `vscode`
 - Shell `/bin/zsh`
 - Devcontainer features:
@@ -12,7 +12,7 @@
   - samuelcolvin.jinjahtml
   - zainchen.json
   - redhat.vscode-yaml
-- Poetry 2.0.1
+- Poetry[poetry-dynamic-versioning]
 - Tailscale (`tscale`) and Openvpn (`ovpn`) clients
 - Google Cloud CLI
 - ArgoCD CLI
