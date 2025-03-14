@@ -4,15 +4,14 @@ export DEBIAN_FRONTEND=noninteractive
 
 apt-get update && \
 apt-get -y install \
-postgresql-14 \
+postgresql \
 default-jdk \
 openvpn3 \
 tailscale \
 google-cloud-cli \
 gh \
 jq \
-xdg-utils \
-ffmpeg
+xdg-utils
 
 # Auth0 CLI
 curl -sSfL https://raw.githubusercontent.com/auth0/auth0-cli/main/install.sh | sh -s -- -b . && mv ./auth0 /usr/local/bin/

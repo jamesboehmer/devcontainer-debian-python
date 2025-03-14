@@ -1,6 +1,6 @@
 # Debian Python Devcontainer
 
-- Base image `mcr.microsoft.com/vscode/devcontainers/python:3.12-bullseye`
+- Base image `mcr.microsoft.com/vscode/devcontainers/python:3-bookworm`
 - User `vscode`
 - Shell `/bin/zsh`
 - Devcontainer features:

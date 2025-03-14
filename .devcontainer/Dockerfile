@@ -1,5 +1,5 @@
-ARG VARIANT=bullseye
-FROM mcr.microsoft.com/vscode/devcontainers/python:3.12-${VARIANT}
+ARG VARIANT=bookworm
+FROM mcr.microsoft.com/vscode/devcontainers/python:3-${VARIANT}
 
 COPY dockerfiles/ /
 RUN apt-get update && /create-apt-sources.sh
