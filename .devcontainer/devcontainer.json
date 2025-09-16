@@ -29,7 +29,9 @@
 	},
 	"features": {
 		"ghcr.io/devcontainers/features/aws-cli:1": {},
-		"ghcr.io/devcontainers/features/docker-in-docker:2": {}
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {
+			"moby": false
+		}
 	},
 	"postCreateCommand": "sudo chown -fR vscode:vscode /home/vscode/.local /home/vscode/.aws /home/vscode/.config /home/vscode/.terraform.d /home/vscode/.kube",
 	"mounts": [

@@ -15,4 +15,4 @@ echo "deb [arch=${ARCH} signed-by=/etc/apt/trusted.gpg.d/tailscale-archive-keyri
 echo "deb [arch=${ARCH} signed-by=/etc/apt/trusted.gpg.d/apt.postgresql.org.gpg] http://apt.postgresql.org/pub/repos/apt ${VERSION_CODENAME}-pgdg main" > "/etc/apt/sources.list.d/pgdg.list";
 echo "deb [arch=${ARCH} signed-by=/etc/apt/trusted.gpg.d/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" > "/etc/apt/sources.list.d/google-cloud-sdk.list";
 echo "deb [arch=${ARCH} signed-by=/etc/apt/trusted.gpg.d/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" > "/etc/apt/sources.list.d/github-cli.list";
-echo "deb [arch=${ARCH} signed-by=/etc/apt/trusted.gpg.d/apt.llvm.org.gpg] http://apt.llvm.org/${VERSION_CODENAME}/ llvm-toolchain-${VERSION_CODENAME}-18 main" > "/etc/apt/sources.list.d/apt.llvm.org.list";
+echo "deb [arch=${ARCH} signed-by=/etc/apt/trusted.gpg.d/apt.llvm.org.gpg] http://apt.llvm.org/${VERSION_CODENAME}/ llvm-toolchain-${VERSION_CODENAME} main" > "/etc/apt/sources.list.d/apt.llvm.org.list";

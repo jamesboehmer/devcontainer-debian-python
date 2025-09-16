@@ -1,4 +1,4 @@
-ARG VARIANT=bookworm
+ARG VARIANT=trixie
 FROM mcr.microsoft.com/vscode/devcontainers/python:3-${VARIANT}
 
 COPY dockerfiles/ /
