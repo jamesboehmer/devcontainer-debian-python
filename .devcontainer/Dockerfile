@@ -2,9 +2,10 @@ ARG VARIANT=trixie
 FROM mcr.microsoft.com/vscode/devcontainers/python:3-${VARIANT}
 
 COPY dockerfiles/ /
-RUN apt-get update && /create-apt-sources.sh
-RUN DEBIAN_FRONTEND=noninteractive /install-apt-packages.sh
-RUN pipx install poetry && poetry self add poetry-dynamic-versioning
+RUN /create-apt-sources.sh
+
+# enables opening URLs automatically in vscode devcontainer
+RUN apt-get update && apt-get -y install xdg-utils
 
 RUN mkdir -p /run/dbus && \
 usermod -s /bin/zsh vscode
