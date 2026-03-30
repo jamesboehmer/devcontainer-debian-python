@@ -30,7 +30,9 @@
 			"moby": false
 		}
 	},
-	"postCreateCommand": "sudo chown -fR vscode:vscode /home/vscode/.local /home/vscode/.aws /home/vscode/.config /home/vscode/.terraform.d /home/vscode/.kube",
+	"postCreateCommand": "sudo chown -fR vscode:vscode /home/vscode/.local /home/vscode/.aws /home/vscode/.config /home/vscode/.terraform.d /home/vscode/.kube && /usr/local/bin/start-socat-gpg-agent-sock.sh",
+	"postStartCommand": ["/usr/local/bin/start-socat-gpg-agent-sock.sh"],
+	"postAttachCommand": ["/usr/local/bin/start-socat-gpg-agent-sock.sh"],
 	"mounts": [
         "source=vscode-aws-credentials,target=/home/vscode/.aws,type=volume",
         "source=vscode-xdg-config,target=/home/vscode/.config,type=volume",
